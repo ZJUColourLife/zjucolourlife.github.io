@@ -15,8 +15,8 @@ highlighter: pygments
 
 
 ### content configuration ###
-title:       "浙江大学彩生活智慧社区研究中心 --- 网站建设中......"
-keywords:    "ZJU, ColourLife"
+title:       "浙江大学彩生活智慧社区研究中心"
+keywords:    "ZJU, ColourLife, IoT"
 description: "研究中心主页"
 source_link: "https://github.com/ZJUColourLife/zjucolourlife.github.io"
 favicon:     #put a path like: "img/favicon.ico"
