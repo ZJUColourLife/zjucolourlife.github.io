@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.sitewhere.com/schema/sitewhere/ee" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:sw="http://www.sitewhere.com/schema/sitewhere/ce"
+	targetNamespace="http://www.sitewhere.com/schema/sitewhere/ee" elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"/>
+	<xsd:import namespace="http://www.sitewhere.com/schema/sitewhere/ce"
+		schemaLocation="http://www.sitewhere.org/schema/sitewhere/ce/1.0.0/sitewhere.xsd?a=1"/>
+	
+	<!-- Configuration data for an HBase datastore (Enterprise Edition) -->
+	<xsd:element name="hbase-datastore" type="hbaseDatastoreType"
+		substitutionGroup="sw:abstract-datastore"/>
+	<xsd:complexType name="hbaseDatastoreType">
+		<xsd:complexContent>
+			<xsd:extension base="sw:abstractDatastoreType">
+				<xsd:attribute name="quorum" type="xsd:string"></xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<!-- Enterprise device provisioning implementation -->
+	<xsd:element name="provisioning" type="enterpriseProvisioningType"
+		substitutionGroup="sw:abstract-provisioning-implementation">
+		<xsd:annotation>
+			<xsd:documentation>Enables the enterprise device provisioning implementation.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="enterpriseProvisioningType">
+		<xsd:complexContent>
+			<xsd:extension base="sw:abstractProvisioningType">
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+</xsd:schema>
