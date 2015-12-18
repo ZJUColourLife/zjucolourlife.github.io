@@ -1,0 +1,14 @@
+{
+	"connection": {
+		"restApiUrl": "http://localhost:9090/zciot/api/",
+		"restApiUsername": "admin",
+		"restApiPassword": "password",
+		"mqttHost": "localhost",
+		"mqttPort": 1883
+	},
+	"defaultHardwareId": "123-OPENHAB-234908324",
+	"mappings": [
+		{ "itemName": "yyy", "hardwareId": "123" },
+		{ "itemName": "zzz", "hardwareId": "456" }
+	]
+}

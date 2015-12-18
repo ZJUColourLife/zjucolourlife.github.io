@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://zjucolourlife.com/schema/zciot/ee/tenant"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:tenant="http://zjucolourlife.com/schema/zciot/ce/tenant" targetNamespace="http://zjucolourlife.com/schema/zciot/ee/tenant"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"/>
+	<xsd:import namespace="http://zjucolourlife.com/schema/zciot/ce/tenant"
+		schemaLocation="http://zjucolourlife.com/schema/zciot/ce/current/zciot-tenant.xsd"/>
+
+	<!-- Enterprise device communication subsystem implementation -->
+	<xsd:element name="device-communication" type="enterpriseCommunicationSubsystemType"
+		substitutionGroup="tenant:abstract-communication-subsystem-implementation">
+		<xsd:annotation>
+			<xsd:documentation>Default enterprise device communication subsystem.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="enterpriseCommunicationSubsystemType">
+		<xsd:complexContent>
+			<xsd:extension base="tenant:abstractCommunicationSubsystemType">
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+</xsd:schema>
